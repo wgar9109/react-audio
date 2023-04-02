@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,800">
+<div id="container">
+  <div id="hook"></div>
+  <h1>Play Music</h1>
+  <input type="file" id="files" name="files[]" multiple />
+</div>
+<script crossorigin src="https://unpkg.com/react@15/dist/react.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+<script src="https://soulwire.github.io/sketch.js/js/sketch.min.js"></script>
+<script src="app.js"></script>
+<script type="text/babel">
+  const PlayButton = () => {
+    return (
+      <a href="#" title="Play video" className="play" />
+    );
+  }
+  class Container extends React.Component {
+    render() {
+      return (
+        <div>
+          <PlayButton />
+        </div>
+      );
+    }
+  }
+  const placeWeWantToPutComponent = document.getElementById('hook');
+  ReactDOM.render(<Container />, placeWeWantToPutComponent);
+  class Container extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { isMusicPlaying: false };
+    }
+    handleClick(event) {
+      // Do something about the click   };
+    }
+    render() {
+      return (<div>
+        <PlayButton isMusicPlaying={this.state.isMusicPlaying} />
+      </div>);
+    }
+  }
+  render()
+  {
+    const status = this.state.isMusicPlaying ?
+      'Playing' :
+      'Not playing';
+    return (
+      <div>
+        <h1>{status}</h1>
+        <PlayButton />
+      </div>);
+  }
+
+  render()
+  {
+    let status = this.state.isMusicPlaying ? 'Playing :)'
+      : 'Not playing :(';
+    return (
+      <div>
+        <h1 onClick={this.handleClick.bind(this)}>
+          {status}</h1>
+        <PlayButton />
+      </div>);
+  }
+  handleClick()
+  {
+    if (this.state.isMusicPlaying) {
+      this.setState({ isMusicPlaying: false });
+    } else {
+      this.setState({ isMusicPlaying: true });
+    }
+  }
+  ;
+  function PlayButton(props) {
+    const className = props.isMusicPlaying ?
+      'play active' : 'play';
+    return <a href="#" title="Play video" className={className} />;
+  }
+  <audio id="audio" ref={(audioTag) => {
+    this.audio = audioTag
+  }} />
+  handleClick()
+  if (this.state.isMusicPlaying) {
+    this.audio.pause();
+  } else {
+    this.audio.play();
+  } <this class="setState"></this>
+  prevState => {
+    return {
+      isMusicPlaying: !prevState.isMusicPlaying
+    };
+  }
+</script>
